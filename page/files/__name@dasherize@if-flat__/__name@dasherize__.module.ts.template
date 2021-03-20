@@ -1,0 +1,21 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+import { <%= classify(name) %>Page } from './<%= dasherize(name) %>.page';
+
+const routes: Routes = [
+  { 
+    path: '', 
+    component: <%= classify(name) %>Page, 
+    data: { title: '<%= classify(name) %>'} 
+  }
+];
+
+@NgModule({
+  declarations: [<%= classify(name) %>Page],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes)
+  ]
+})
+export class <%= classify(name) %>Module { }
